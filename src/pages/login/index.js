@@ -11,7 +11,7 @@ class Login extends Component{
 
     render() {
         return (
-            <Fragment>登录</Fragment>
+            <Fragment>登录1</Fragment>
         )
     }
 }
