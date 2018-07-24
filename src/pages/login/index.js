@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import {NForm, NButton, NIcon, NInput, NCheckbox} from 'shared/packages/index';
+import {NForm, NButton, NIcon, NInput, NCheckbox, NHeader} from 'shared/packages/index';
 import ReactDOM from 'react-dom';
 const { NFormItem } = NForm;
 
@@ -11,14 +11,21 @@ class Login extends Component{
         }
     }
 
+    componentDidMount() {
+
+    }
+
     loginInfoSubmit() {//确定提交登录信息
         
     }
     render() {
+        console.log(this.props)
         const { getFieldDecorator } = this.props.form;
         return (
             <Fragment>
-                 <NForm onSubmit={this.loginInfoSubmit.bind(this)} className="login-form">
+                111
+                {/* <NHeader>登录</NHeader>
+                <NForm onSubmit={this.loginInfoSubmit.bind(this)} className="login-form">
                     <NFormItem>
                         {getFieldDecorator('userName', {
                             rules: [{ required: true, message: 'Please input your username!' }],
@@ -40,17 +47,18 @@ class Login extends Component{
                         })(
                             <NCheckbox>保存</NCheckbox>
                         )}
-                        <a className="login-form-forgot" href="">Forgot password</a>
+                        <a className="login-form-forgot" href="">忘记密码</a>
                         <NButton type="primary" htmlType="submit" className="login-form-button">
                             登录
                         </NButton>
+                        <a className="login-form-forgot" href="">注册</a>
                     </NFormItem>
-                </NForm>
+                </NForm> */}
             </Fragment>
         )
     }
 }
-console.log(NForm)
+
 const WrappedNormalLoginForm = NForm.create()(Login);
 
 ReactDOM.render(<WrappedNormalLoginForm />, document.getElementById('root'));
