@@ -6,6 +6,8 @@ import NFooter from './NFooter';
 import NHeader from './NHeader';
 import NSider from './NSider';
 import NAffix from './NAffix';
+import NForm from './NForm';
+import NInput from './NInput';
 
 export {
     NAffix, 
@@ -15,5 +17,7 @@ export {
     NContent, 
     NFooter, 
     NHeader, 
-    NSider
+    NSider,
+    NForm,
+    NInput
 };
