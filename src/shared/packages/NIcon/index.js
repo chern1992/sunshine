@@ -1,15 +1,15 @@
-import { Row } from 'antd';
+import { Icon } from 'antd';
 import React, { Component } from 'react';
-class NRow extends Component {
+class NIcon extends Component {
     constructor(props){
         super(props);
     }
 
     render() {
         return (
-            <Row {...props}/>   
+            <Icon {...this.props}/>   
         )
     }
 }
 
-export default NRow;
+export default NIcon;

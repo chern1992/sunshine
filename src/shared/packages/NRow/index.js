@@ -1,15 +1,15 @@
-import { Header } from 'antd';
+import { Row } from 'antd';
 import React, { Component } from 'react';
-class NHeader extends Component {
+class NRow extends Component {
     constructor(props){
         super(props);
     }
 
     render() {
         return (
-            <Header {...props}/>   
+            <Row {...this.props}/>   
         )
     }
 }
 
-export default NHeader;
+export default NRow;

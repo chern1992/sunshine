@@ -1,15 +1,15 @@
-import { Footer } from 'antd';
+import { Col } from 'antd';
 import React, { Component } from 'react';
-class NFooter extends Component {
+class NCol extends Component {
     constructor(props){
         super(props);
     }
 
     render() {
         return (
-            <Footer {...props}/>   
+            <Col {...this.props}/>   
         )
     }
 }
 
-export default NFooter;
+export default NCol;

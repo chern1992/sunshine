@@ -82,10 +82,11 @@ module.exports = {
       'react-native': 'react-native-web',
       '@': path.resolve(__dirname, '../src'),
       'src': path.resolve(__dirname, '../src'),
-      'shared': path.resolve(__dirname, '../shared'),
+      'shared': path.resolve(__dirname, '../src/shared'),
       'router': path.resolve(__dirname, '../src/router'),
       'redux': path.resolve(__dirname, '../src/redux'),
       'services': path.resolve(__dirname, '../src/services'),
+      'pages': path.resolve(__dirname, '../src/pages')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

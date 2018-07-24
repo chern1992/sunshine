@@ -1,15 +1,15 @@
-import { Col } from 'antd';
+import { Affix } from 'antd';
 import React, { Component } from 'react';
-class NCol extends Component {
+class NAffix extends Component {
     constructor(props){
         super(props);
     }
 
     render() {
         return (
-            <Col {...props}/>   
+            <Affix {...this.props}/>   
         )
     }
 }
 
-export default NCol;
+export default NAffix;

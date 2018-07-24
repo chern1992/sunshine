@@ -1,15 +1,15 @@
-import { Input } from 'antd';
+import { Button } from 'antd';
 import React, { Component } from 'react';
-class NInput extends Component {
+class NButton extends Component {
     constructor(props){
         super(props);
     }
 
     render() {
         return (
-            <Input {...props}/>   
+            <Button {...this.props}/>   
         )
     }
 }
 
-export default NInput;
+export default NButton;

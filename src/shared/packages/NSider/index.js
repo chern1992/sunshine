@@ -1,15 +1,15 @@
-import { Content } from 'antd';
+import { Affix } from 'antd';
 import React, { Component } from 'react';
-class NContent extends Component {
+class NAffix extends Component {
     constructor(props){
         super(props);
     }
 
     render() {
         return (
-            <Content {...props}/>   
+            <Affix {...this.props}/>   
         )
     }
 }
 
-export default NContent;
+export default NAffix;

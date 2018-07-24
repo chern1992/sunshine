@@ -7,7 +7,7 @@ class NForm extends Component {
 
     render() {
         return (
-            <Form {...props}/>   
+            <Form {...this.props}/>   
         )
     }
 }

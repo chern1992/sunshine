@@ -1,15 +1,15 @@
-import { Icon } from 'antd';
+import { Input } from 'antd';
 import React, { Component } from 'react';
-class NIcon extends Component {
+class NInput extends Component {
     constructor(props){
         super(props);
     }
 
     render() {
         return (
-            <Icon {...props}/>   
+            <Input {...this.props}/>   
         )
     }
 }
 
-export default NIcon;
+export default NInput;
