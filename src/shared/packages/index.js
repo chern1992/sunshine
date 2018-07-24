@@ -8,6 +8,8 @@ import NSider from './NSider';
 import NAffix from './NAffix';
 import NForm from './NForm';
 import NInput from './NInput';
+import NCheckbox from './NCheckbox';
+import NIcon from './NIcon';
 
 export {
     NAffix, 
@@ -19,5 +21,7 @@ export {
     NHeader, 
     NSider,
     NForm,
-    NInput
+    NInput,
+    NCheckbox,
+    NIcon
 };
