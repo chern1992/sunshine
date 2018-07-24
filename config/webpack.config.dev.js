@@ -76,18 +76,16 @@ module.exports = {
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
-    // These are the reasonable defaults supported by the Node ecosystem.
-    // We also include JSX as a common component filename extension to support
-    // some tools, although we do not recommend using it, see:
-    // https://github.com/facebookincubator/create-react-app/issues/290
-    // `web` extension prefixes have been added for better support
-    // for React Native Web.
+    //默认加载扩展名、相对JS路径模块的配置
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      
-      // Support React Native Web
-      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      '@': path.resolve(__dirname, '../src'),
+      'src': path.resolve(__dirname, '../src'),
+      'shared': path.resolve(__dirname, '../shared'),
+      'router': path.resolve(__dirname, '../src/router'),
+      'redux': path.resolve(__dirname, '../src/redux'),
+      'services': path.resolve(__dirname, '../src/services'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
