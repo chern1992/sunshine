@@ -5,8 +5,6 @@ const LOGIN = {
     USER_REMOVE: 'USER_REMOVE'
 }
 
-
-
 export {
     LOGIN
 }
