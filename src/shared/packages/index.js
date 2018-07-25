@@ -10,6 +10,8 @@ import NForm from './NForm';
 import NInput from './NInput';
 import NCheckbox from './NCheckbox';
 import NIcon from './NIcon';
+import NInputNumber from './NInputNumber';
+import NMention from './NMention';
 
 export {
     NAffix, 
@@ -23,5 +25,7 @@ export {
     NForm,
     NInput,
     NCheckbox,
-    NIcon
+    NIcon,
+    NInputNumber,
+    NMention
 };
