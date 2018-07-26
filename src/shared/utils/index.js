@@ -67,7 +67,7 @@ import {isEmptyObj, isEmptyArr} from './emptyUtil';
 import {hasClass, addClass, removeClass} from './classNameUtil';
 import {getCookie, setCookie, removeCookie} from './cookieUtil';
 import {setStorage, getStorage, removeStorage, clearStorage} from './storageUtil';
-import {getExplore, getOS, phoneModules, isPhoneDevice, isIpad, testApp, openApp} from './deviceUtil';
+import {getExplore, getOS, phoneModules, isPhoneDevice, isIpad, testApp, openApp, getUUID} from './deviceUtil';
 import {lunCheck, phoneCheck, urlCheck, isInteger} from './typeRegUtil';
 import {parseQueryString, urlHost, urlHostName, urlPost, urlProtocol, fullScreen, exitFullScreen} from './urlUtil';
 import {cutStr, getRandomNum, random, smalltoBIG} from './numberUtil';
@@ -154,7 +154,8 @@ var Utils = {
 	uniqueByObj: uniqueByObj,
 	indexof: indexof,
 	removeEle: removeEle,
-	removeObj: removeObj
+	removeObj: removeObj,
+	getUUID: getUUID
 };
 
 export default Utils;

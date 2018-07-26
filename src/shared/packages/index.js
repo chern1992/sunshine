@@ -13,6 +13,9 @@ import NIcon from './NIcon';
 import NInputNumber from './NInputNumber';
 import NMention from './NMention';
 import NToast from './NToast';
+import NBreadcrumb from './NBreadcrumb';
+import NBackTop from './NBackTop';
+import NDropDown from './NDropDown';
 
 export {
     NAffix, 
@@ -29,5 +32,8 @@ export {
     NIcon,
     NInputNumber,
     NMention,
-    NToast
+    NToast,
+    NBreadcrumb,
+    NBackTop,
+    NDropDown
 };
