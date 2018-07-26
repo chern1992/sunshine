@@ -1,6 +1,6 @@
 /**
  * 工具类集合
- * @author  yinshb
+ * @author  ChenDC
  *
  * 使用说明：
  *

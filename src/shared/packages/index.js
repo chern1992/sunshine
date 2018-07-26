@@ -12,6 +12,7 @@ import NCheckbox from './NCheckbox';
 import NIcon from './NIcon';
 import NInputNumber from './NInputNumber';
 import NMention from './NMention';
+import NToast from './NToast';
 
 export {
     NAffix, 
@@ -27,5 +28,6 @@ export {
     NCheckbox,
     NIcon,
     NInputNumber,
-    NMention
+    NMention,
+    NToast
 };

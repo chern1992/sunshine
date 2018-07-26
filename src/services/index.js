@@ -29,7 +29,25 @@ export function ajax(url, options = {}) {
     return new Promise( (resolve, reject) => {
         fetch(url, options).then( (res) => {
             return res.json();
-        }).then( data => {
+        }).then( res => {
+            const res = data;
+            if(res.errorCode != status.SUCCESS) {
+                switch (res.errorCode) {
+                    case status.NET_ERR:
+                    case status.BIZ_ERR:
+                        NToast({description: '网络连接异常，请稍后再试'},'warning');
+                        reject(res);
+                        break;
+                    case status.NO_AUTH:
+                        NToast({description: '网络连接异常，请稍后再试'},'warning');
+                        Utils.removeStorage('userToken');
+                        // 重新跳转至登录页 todo
+                        reject(res);
+                        break;
+                    default:
+                        break;
+                }
+            }
             resolve(data);
         }).catch( err => {
             console.log('err', err);
@@ -45,14 +63,14 @@ function commonBizHeader () {
     params['ws'] = window.screen.height + '*' + window.screen.width
     params['token'] = "3dwo0onUUsPKVJcP8tk"
     params['os'] = window.navigator.appCodeName
-    params['token'] = Storage.get('managerUserToken')
+    params['token'] = Utils.getStorage('userToken')
   
     params['app'] = 'kind'
   
-    let UUID = Storage.get('pkey')
+    let UUID = Utils.getStorage('pkey')
     if (!UUID) {
       UUID = getUUID()
-      window.localStorage.setItem('pkey', UUID)
+      Utils.setStorage('pkey', UUID)
     }
     return encodeURIComponent(JSON.stringify(params))
 }
