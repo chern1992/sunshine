@@ -18,6 +18,9 @@ import NBackTop from './NBackTop';
 import NDropDown from './NDropDown';
 import NNotification from './NNotification';
 import NPagination from './NPagination';
+import NSteps from './NSteps';
+import NAutoComplete from './NAutoComplete';
+import NCascader from './NCascader';
 
 export {
     NAffix, 
@@ -39,5 +42,8 @@ export {
     NBackTop,
     NDropDown,
     NNotification,
-    NPagination
+    NPagination,
+    NSteps,
+    NAutoComplete,
+    NCascader
 };
