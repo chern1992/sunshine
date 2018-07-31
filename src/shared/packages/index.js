@@ -16,6 +16,8 @@ import NToast from './NToast';
 import NBreadcrumb from './NBreadcrumb';
 import NBackTop from './NBackTop';
 import NDropDown from './NDropDown';
+import NNotification from './NNotification';
+import NPagination from './NPagination';
 
 export {
     NAffix, 
@@ -35,5 +37,7 @@ export {
     NToast,
     NBreadcrumb,
     NBackTop,
-    NDropDown
+    NDropDown,
+    NNotification,
+    NPagination
 };
