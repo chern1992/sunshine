@@ -13,7 +13,7 @@
  *****************************************************/
 const checkHasProps = (meta,areacode,attrcode)=>{
     //判断元数据中有我的表单元数据
-    if(Object.prototype.toString.call(meta).slice(8, -1) === 'Object' && meta.hasOwnProperty(formId)){
+    if(Object.prototype.toString.call(meta).slice(8, -1) === 'Object' && meta.hasOwnProperty('formId')){
         let formMeta = meta[areacode];
         if(formMeta.code!=areacode){
             throw new Error("areacode和元数据模板不匹配，请确认！");

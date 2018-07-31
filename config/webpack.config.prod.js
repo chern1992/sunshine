@@ -90,7 +90,7 @@ module.exports = {
       'src': path.resolve(__dirname, '../src'),
       'shared': path.resolve(__dirname, '../src/shared'),
       'router': path.resolve(__dirname, '../src/router'),
-      'redux': path.resolve(__dirname, '../src/redux'),
+      'store': path.resolve(__dirname, '../src/store'),
       'services': path.resolve(__dirname, '../src/services'),
       'pages': path.resolve(__dirname, '../src/pages'),
     },
@@ -112,21 +112,21 @@ module.exports = {
 
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
-      {
-        test: /\.(js|jsx|mjs)$/,
-        enforce: 'pre',
-        use: [
-          {
-            options: {
-              formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
+      // { //eslint禁用
+      //   test: /\.(js|jsx|mjs)$/,
+      //   enforce: 'pre',
+      //   use: [
+      //     {
+      //       options: {
+      //         formatter: eslintFormatter,
+      //         eslintPath: require.resolve('eslint'),
               
-            },
-            loader: require.resolve('eslint-loader'),
-          },
-        ],
-        include: paths.appSrc,
-      },
+      //       },
+      //       loader: require.resolve('eslint-loader'),
+      //     },
+      //   ],
+      //   include: paths.appSrc,
+      // },
       {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
@@ -165,7 +165,7 @@ module.exports = {
           // use the "style" loader inside the async code so CSS from them won't be
           // in the main CSS file.
           {
-            test: /\.(css|less)$/,
+            test: /\.(css|less)$/,//配置less解析css
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -204,6 +204,9 @@ module.exports = {
                         ],
                       },
                     },
+                    {
+                      loader: require.resolve('less-loader') //配置less解析css
+                    }
                   ],
                 },
                 extractTextPluginOptions

@@ -80,7 +80,7 @@ export const union = (a, b) => {
  * @desc 取两个数组补集
  */
 export const complement = (a, b) => {
-    return minus(union(a, b), intersect(a, b));
+    return minus(union(a, b), interset(a, b));
 }
 
  /**

@@ -1,11 +1,11 @@
 /** 
  * @desc   url参数转对象
- * @param  {String} url  default: window.location.href
+ * @param  {String} url  default: window.window.location.href
  * @return {Object} 
  */
 export const parseQueryString = (url) => {
     let name, value;
-    let str = location.href; //取得整个地址栏
+    let str = window.location.href; //取得整个地址栏
     let num = str.indexOf("?");
     str = str.substr(num + 1); //取得所有参数
     var arr = str.split("&"); //各个参数放到数组里
@@ -14,7 +14,7 @@ export const parseQueryString = (url) => {
         if (num > 0) {
             name = arr[i].substring(0, num);
             value = arr[i].substr(num + 1);
-        if (pname === name)
+        if ('pname' === name)
             return decodeURIComponent(value);
         }
     }
@@ -26,7 +26,7 @@ export const parseQueryString = (url) => {
  * @return str
  */
 export const urlHost = () => {
-    return location.host;
+    return window.location.host;
 }
 
 /** 
@@ -34,7 +34,7 @@ export const urlHost = () => {
  * @return str
  */
 export const urlHostName = () => {
-    return location.hostName;
+    return window.location.hostName;
 }
 
 /** 
@@ -42,7 +42,7 @@ export const urlHostName = () => {
  * @return str
  */
 export const urlPost = () => {
-    return location.post;
+    return window.location.post;
 }
 
 /**
@@ -50,7 +50,7 @@ export const urlPost = () => {
  * @return str
  * **/
 export const urlProtocol = () => {
-    return location.protocol;
+    return window.location.protocol;
 }
 
 /**
@@ -64,8 +64,8 @@ export const fullScreen = () => {
       docElm.mozRequestFullScreen();
     }else if (docElm.webkitRequestFullScreen) {//Chrome等
       docElm.webkitRequestFullScreen();
-    }else if (elem.msRequestFullscreen) {//IE11
-      elem.msRequestFullscreen();
+    }else if (docElm.msRequestFullscreen) {//IE11
+      docElm.msRequestFullscreen();
     }
   }
   
@@ -80,7 +80,7 @@ export const fullScreen = () => {
       document.mozCancelFullScreen();
     }else if (docElm.webkitRequestFullScreen) {//Chrome等
       document.webkitCancelFullScreen();
-    }else if (elem.msRequestFullscreen) {//IE11
+    }else if (docElm.msRequestFullscreen) {//IE11
       document.msExitFullscreen();
     }
   }

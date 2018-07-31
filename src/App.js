@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import RputerMap from './router';
 
-import './assets/styles/style';
+import './assets/styles/style.less';
 
 class App extends Component {
   render() {

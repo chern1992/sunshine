@@ -132,8 +132,8 @@ export const lunCheck = (bankno) => {
  * @param {String} phone
  * @return  {Boolean}
  */
-export const phoneChekc = (phone) => {
-    return /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/.test(str)
+export const phoneCheck = (phone) => {
+    return /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/.test(phone)
 }
 
 /**
@@ -141,8 +141,8 @@ export const phoneChekc = (phone) => {
  * @param {String} url
  * @return  {Boolean}
  */
-export const urlChekc = (url) => {
-    return /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i.test(str);
+export const urlCheck = (url) => {
+    return /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i.test(url);
 }
 
 /**
