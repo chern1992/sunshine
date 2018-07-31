@@ -12,4 +12,7 @@ class NInput extends Component {
     }
 }
 
+NInput.NSearch = Input.Search;
+NInput.NInputGroup = Input.InputGroup; 
+
 export default NInput;

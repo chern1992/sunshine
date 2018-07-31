@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import {NForm, NButton, NIcon, NInput, NCheckbox, NHeader} from 'shared/packages/index';
 import ReactDOM from 'react-dom';
-import {Form} from 'antd';
-const { NFormItem } = NForm;
+
+import './index.less';
 
 class Login extends Component{
     constructor(props) {
@@ -21,11 +21,13 @@ class Login extends Component{
     }
 
     render() {
-        console.log(this.props)
         return (
-            <Fragment>
-                <NHeader>登录</NHeader>
-            </Fragment>
+            <div className="login-bg-container">
+                <section className="login-container">
+                    <h2>登录</h2>
+                    <NInput placeholder="Basic usage"/>
+                </section>
+            </div>
         )
     }
 }
