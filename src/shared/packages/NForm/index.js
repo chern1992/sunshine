@@ -12,5 +12,6 @@ class NForm extends Component {
     }
 }
 
-NForm.NFormItem = Form.FormItem;
+NForm.NFormItem = Form.Item;
+NForm.create = Form.create;
 export default NForm;
