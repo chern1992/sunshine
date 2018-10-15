@@ -1,49 +1,24 @@
-import NButton from './NButton';
-import NRow from './NRow';
-import NCol from './NCol';
-import NContent from './NContent';
-import NFooter from './NFooter';
-import NHeader from './NHeader';
-import NSider from './NSider';
-import NAffix from './NAffix';
-import NForm from './NForm';
-import NInput from './NInput';
-import NCheckbox from './NCheckbox';
-import NIcon from './NIcon';
-import NInputNumber from './NInputNumber';
-import NMention from './NMention';
-import NToast from './NToast';
-import NBreadcrumb from './NBreadcrumb';
-import NBackTop from './NBackTop';
-import NDropDown from './NDropDown';
-import NNotification from './NNotification';
-import NPagination from './NPagination';
-import NSteps from './NSteps';
-import NAutoComplete from './NAutoComplete';
-import NCascader from './NCascader';
-
-export {
-    NAffix, 
-    NButton, 
-    NRow, 
-    NCol, 
-    NContent, 
-    NFooter, 
-    NHeader, 
-    NSider,
-    NForm,
-    NInput,
-    NCheckbox,
-    NIcon,
-    NInputNumber,
-    NMention,
-    NToast,
-    NBreadcrumb,
-    NBackTop,
-    NDropDown,
-    NNotification,
-    NPagination,
-    NSteps,
-    NAutoComplete,
-    NCascader
-};
+export { default as NButton } from './NButton';
+export { default as NRow } from './NRow';
+export { default as NCol } from './NCol';
+export { default as NContent } from './NContent';
+export { default as NFooter } from './NFooter';
+export { default as NHeader } from './NHeader';
+export { default as NSider } from './NSider';
+export { default as NAffix } from './NAffix';
+export { default as NForm } from './NForm';
+export { default as NInput } from './NInput';
+export { default as NCheckbox } from './NCheckbox';
+export { default as NIcon } from './NIcon';
+export { default as NInputNumber } from './NInputNumber';
+export { default as NMention } from './NMention';
+export { default as NToast } from './NToast';
+export { default as NBreadcrumb } from './NBreadcrumb';
+export { default as NBackTop } from './NBackTop';
+export { default as NDropDown } from './NDropDown';
+export { default as NNotification } from './NNotification';
+export { default as NPagination } from './NPagination';
+export { default as NSteps } from './NSteps';
+export { default as NAutoComplete } from './NAutoComplete';
+export { default as NCascader } from './NCascader';
+export { default as NTree } from './NTree';
