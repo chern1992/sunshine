@@ -1,4 +1,4 @@
-import { Steps } from 'antd';
+import { Table } from 'antd';
 import React, { Component } from 'react';
 class NSteps extends Component {
     constructor(props){
@@ -7,11 +7,9 @@ class NSteps extends Component {
 
     render() {
         return (
-            <Steps {...this.props}/>   
+            <Table {...this.props}/>   
         )
     }
 }
-
-NSteps.Nstep = Steps.Step;
 
 export default NSteps;
