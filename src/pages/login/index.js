@@ -1,16 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import {NForm, NButton, NIcon, NInput, NCheckbox, NHeader} from 'shared/packages/index';
+import {NForm, NButton, NIcon, NInput, NCheckbox, NHeader} from 'shared/base/index';
 import ReactDOM from 'react-dom';
-import {Form} from 'antd';
+import Page from 'shared/Page';
 import './index.less';
 
 const NFormItem = NForm.NFormItem;
 
-class Login extends Component{
+class Login extends Page{
     constructor(props) {
         super(props);
         this.state = {
-
+            sum: 111
         }
     }
 
@@ -36,24 +36,8 @@ class Login extends Component{
         
         return (
             <div className="login-bg-container">
-                <section className="login-container">
-                    <h2>登录</h2>
-                    <NForm onSubmit={this.handleSubmit.bind(this)}>
-                        <NFormItem>
-                            {getFieldDecorator('userName', {
-                                rules: [{ required: true, message: 'Please input your username!' }],
-                            })(
-                                <NInput prefix={<NIcon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
-                            )}
-                        </NFormItem>
-                        <NFormItem>
-                        <NButton type="primary" htmlType="submit" className="login-form-button">
-                            Log in
-                        </NButton>
-                        </NFormItem>
-                    </NForm>
-                    <NInput placeholder="Basic usage"/>
-                </section>
+                {console.log('this', this)}
+                {this.modal.createModal('ddd')}
             </div>
         )
     }

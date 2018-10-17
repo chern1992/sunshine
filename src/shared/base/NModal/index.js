@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from 'antd';
+import {Modal} from 'antd';
 require('./index.less');
 
 export default class NModal extends Component {

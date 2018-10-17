@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NCIcon from '../../base/nc_Icon';
 import { NModal, NButton } from '../../base';
 require('./createModal.less');
 
