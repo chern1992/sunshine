@@ -9,9 +9,9 @@ const NFormItem = NForm.NFormItem;
 class Login extends Page{
     constructor(props) {
         super(props);
-        this.state = {
-            sum: 111
-        }
+        // this.state = {
+        //     // sum: 111
+        // }
     }
 
     componentDidMount() {
@@ -36,8 +36,8 @@ class Login extends Page{
         
         return (
             <div className="login-bg-container">
-                {console.log('this', this)}
-                {this.modal.createModal('ddd')}
+                {console.log('this', this.modal.createModal('ddd'))}
+                {/* {this.modal.createModal('ddd')} */}
             </div>
         )
     }

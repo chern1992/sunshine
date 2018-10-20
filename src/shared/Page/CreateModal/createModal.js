@@ -45,6 +45,9 @@ export default function createModal(
 		closeByClickBackDrop,
 		mark: 'create'
     };
+
+    console.log('this', this)
+
     if(this.state.modal && this.state.modal[id] && this.state.modal[id].showModal === true) {
         if(this.state.modal[id].mark === 'create') {
             this.state.modal[id] = Object.assign(this.state.modal[id], argusObj);

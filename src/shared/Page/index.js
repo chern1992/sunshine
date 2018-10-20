@@ -10,9 +10,9 @@ export default class Page extends Component{
         }
         //简单提示模态框组件
         this.modal = {
-            createModal,
-            show,
-            hide
+            createModal: createModal.bind(this),
+            show: show.bind(this),
+            hide: hide.bind(this)
         }
     }
 
