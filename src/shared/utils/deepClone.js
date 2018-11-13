@@ -1,7 +1,7 @@
 /**
  * origin: https://github.com/pvorb/clone/blob/master/clone.js
  */
-export default (function () {
+var clone = (function () {
     'use strict';
 
     function _instanceof(obj, type) {
@@ -249,7 +249,8 @@ export default (function () {
     return clone;
 })();
 
-
-
+if (typeof module === 'object' && module.exports) {
+    module.exports = clone;
+}
 
 
