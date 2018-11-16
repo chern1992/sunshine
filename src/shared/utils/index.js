@@ -66,7 +66,7 @@ import {arrayEqual, objectEqual, strEqual} from './equalUtil';
 import {isEmptyObj, isEmptyArr} from './emptyUtil';
 import {hasClass, addClass, removeClass} from './classNameUtil';
 import {getCookie, setCookie, removeCookie} from './cookieUtil';
-import {setStorage, getStorage, removeStorage, clearStorage} from './storageUtil';
+import Storage from './storageUtil';
 import {getExplore, getOS, phoneModules, isPhoneDevice, isIpad, testApp, openApp, getUUID} from './deviceUtil';
 import {lunCheck, phoneCheck, urlCheck, isInteger} from './typeRegUtil';
 import {parseQueryString, urlHost, urlHostName, urlPost, urlProtocol, fullScreen, exitFullScreen} from './urlUtil';
@@ -95,10 +95,10 @@ var Utils = {
 	getCookie: getCookie,
 	setCookie: setCookie,
 	removeCookie: removeCookie,
-	setStorage: setStorage,
-	getStorage: getStorage,
-	removeStorage: removeStorage,
-	clearStorage: clearStorage,
+	setStorage: Storage.setStorage,
+	getStorage: Storage.getStorage,
+	removeStorage: Storage.removeStorage,
+	clearStorage: Storage.clearStorage,
 	getExplore: getExplore,
 	getOS: getOS,
 	phoneModules: phoneModules,

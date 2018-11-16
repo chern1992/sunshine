@@ -1,6 +1,6 @@
 import Qs from 'qs';
 import axios from 'axios';
-import Storage from './storageUtil';
+import Utils from '../utils';
 
 const responseStatus = {
     SUCCESS: '100',
@@ -95,16 +95,16 @@ const commonBizHeader = () => {
     params['token'] = "3dwo0onUUsPKVJcP8tk"
     params['os'] = window.navigator.appCodeName
   
-    if(Storage.getItem('userToken')) {
-      params['token'] = Storage.getItem('userToken')
+    if(Utils.getItem('userToken')) {
+      params['token'] = Utils.getItem('userToken')
     }
   
     params['app'] = 'kind'
   
-    let UUID = Storage.getItem('pkey')
+    let UUID = Utils.getItem('pkey')
     if (!UUID) {
       UUID = getUUID()
-      Storage.setItem('pkey', UUID)
+      Utils.setItem('pkey', UUID)
     }
     return encodeURIComponent(JSON.stringify(params))
 }
