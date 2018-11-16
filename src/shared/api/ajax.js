@@ -7,7 +7,6 @@ const responseStatus = {
     NET_ERR: '101',	// 网络连接异常，请稍候再试
     BIZ_ERR: '103', // 业务请求异常
     NO_AUTH: '104',
-    NO_AUTH_B: '555'
 }
 
 /**
@@ -24,7 +23,9 @@ export default function Ajax({
 	params = {},
 	from = '',
 	headers = { 'Content-Type': 'application/json;charset=UTF-8' },
-	delayTime = 5000
+  delayTime = 5000,
+  netErrToast = true,//默认全局统一配置提示(网关异常)
+  bizErrToast = true,//默认全局统一配置提示(业务异常)
 }) {
   return new Promise( (resolve, reject) => {
     const instance = axios.create({
@@ -61,10 +62,17 @@ export default function Ajax({
         if(status.SUCCESS != res.errorCode) {
           switch (res.errorCode) {
             case status.NET_ERR:
+              if(netErrToast) {
+
+              }
               break;
             case status.BIZ_ERR:
+              if(bizErrToast) {
+
+              }
               break;
-            case status.NO_AUTH:
+            case status.NO_AUTH://提示并直接跳转登录页
+              
               break;
             default:
               break;
