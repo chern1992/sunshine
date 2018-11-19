@@ -72,7 +72,7 @@ export default function Ajax({
               }
               break;
             case status.NO_AUTH://提示并直接跳转登录页
-              
+              console.log('无权限');
               break;
             default:
               break;
