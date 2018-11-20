@@ -83,10 +83,11 @@ module.exports = {
       '@': path.resolve(__dirname, '../src'),
       'src': path.resolve(__dirname, '../src'),
       'shared': path.resolve(__dirname, '../src/shared'),
-      'router': path.resolve(__dirname, '../src/router'),
-      'store': path.resolve(__dirname, '../src/store'),
-      'services': path.resolve(__dirname, '../src/services'),
-      'pages': path.resolve(__dirname, '../src/pages')
+      'router': path.resolve(__dirname, '../src/app/router'),
+      'store': path.resolve(__dirname, '../src/app/store'),
+      'services': path.resolve(__dirname, '../src/app/services'),
+      'mocks': path.resolve(__dirname, '../src/app/mocks'),
+      'views': path.resolve(__dirname, '../src/views'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

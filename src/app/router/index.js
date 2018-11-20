@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 // 组件
-import Login from 'pages/login';
+import Login from 'views/login';
 
 //React Router 实现自定义的 history
 import createHistory from 'history/createBrowserHistory'

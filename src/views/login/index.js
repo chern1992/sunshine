@@ -36,7 +36,7 @@ class Login extends Page{
         
         return (
             <div className="login-bg-container">
-                {console.log('this', this.modal.createModal('ddd'))}
+                555
                 {/* {this.modal.createModal('ddd')} */}
             </div>
         )

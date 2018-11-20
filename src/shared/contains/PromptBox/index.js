@@ -13,6 +13,19 @@ export default class PromptBox extends Component {
         }
    }
 
+   //title x图标的关闭
+   closeBtnClick(){
+
+   }
+   //确定
+   beSureClick() {
+
+   }
+   //取消
+   cancelClick() {
+       
+   }
+
    render() {
        const {title, content, noFooter, noCancelButton} = this.props;
        let id = Date.now() + Math.random();
