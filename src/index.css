@@ -1,5 +1,8 @@
 /* ant design样式引入 */
 @import '~antd/dist/antd.css';
+.main-container, #root{
+  height: 100%;
+}
 
 
 

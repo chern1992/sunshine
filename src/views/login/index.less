@@ -1,15 +1,16 @@
 @import '../../styles/style.less';
 // 登录页公共样式
-.login-bg-container{
+.login-box-container{
+    position: relative;
+    height: 100%;
     background: url('../../assets/images/login/login_bg.png') no-repeat center center;
     background-size: 100% 100%; 
-}
-.login-container{
-    padding: 20px 10px 0;
-    .notStatic(15px,15px,auto,auto,1);
-    width: 300px;
-    height: 300px;
-    background-color: rgba(255, 255, 255, .4);
+    .auth-modal-box{
+        .notStatic(50%, 20px, auto, auto, 3, fixed);
+        transform: translateY(-50%);
+        padding: 15px;
+        background-color: #ddd;
+    }
 }
 //密码重置
 
