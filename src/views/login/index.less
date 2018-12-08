@@ -6,10 +6,23 @@
     background: url('../../assets/images/login/login_bg.png') no-repeat center center;
     background-size: 100% 100%; 
     .auth-modal-box{
+        width: 285px;
         .notStatic(50%, 20px, auto, auto, 3, fixed);
         transform: translateY(-50%);
-        padding: 15px;
+        padding: 30px 15px 15px;
         background-color: #ddd;
+    }
+    .auth-login-title{
+        text-align: center;
+    }
+    .auth-status-img{
+        width: 88px;
+        .notStatic(-36px, 0, 0, 50%, 5, absolute);
+        transform: translateX(-50%);
+    }
+    .login-form-button{
+        display: block;
+        width: 100%;
     }
 }
 //密码重置
