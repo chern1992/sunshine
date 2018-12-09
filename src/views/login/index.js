@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import {NForm, NButton, NIcon, NInput, NCheckbox, NRow, NCol} from 'shared/base/index';
 import ReactDOM from 'react-dom';
 import './index.less';
-
+import {callLoginByUserAndName} from 'services/login_api';
 const NFormItem = NForm.NFormItem;
 
 class Login extends Component{
@@ -20,8 +20,10 @@ class Login extends Component{
 
     }
 
-    loginInfoSubmit = (values) => {//确定提交登录信息
+    loginInfoSubmit = async(values) => {//确定提交登录信息
         console.log(values)
+        let res = await callLoginByUserAndName(values);
+        console.log(res);
     }
 
     //更改输入框状态

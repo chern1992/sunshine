@@ -61,7 +61,9 @@
   },
   "scripts": {
     "dev": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build:prod": "node NODE_ENV=production scripts/build.js",
+    "build:dev": "node NODE_ENV=development npm_config_preview=true  npm_config_report=true scripts/build.js",
+    "build:test": "node NODE_ENV=testing scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
@@ -105,5 +107,11 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "proxy": {
+    "/*": {
+      "target": "https://douban.uieee.com",
+      "changeOrigin": true
+    }
   }
 }

@@ -78,13 +78,13 @@ import {chunk, compact, dedupe, orderBy, union, complement, interset, minus, uni
 		removeObj} from './arrayUtil';
 
 var Utils = {
-    clone : deepClone,
-    filterResult : filterResult,
-    convertGridEnablestate : convertGridEnablestate,
-    filterDelRows : filterDelRows,
-    handleTableReData : handleTableReData,
-    checkHasChildren:checkHasChildren,
-    checkHasProps:checkHasProps,
+  clone : deepClone,
+  filterResult : filterResult,
+  convertGridEnablestate : convertGridEnablestate,
+  filterDelRows : filterDelRows,
+  handleTableReData : handleTableReData,
+  checkHasChildren:checkHasChildren,
+  checkHasProps:checkHasProps,
 	dealTreeData:dealTreeData,
 	arrayEqual: arrayEqual,
 	isEmptyObj: isEmptyObj,

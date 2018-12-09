@@ -3,8 +3,15 @@ const typeToggle = (type = 'local') => {
 }
 
 const getStorage = (key = '', type = 'local') => {
-    let value = typeToggle(type).getItem(key).data;
-    const expDate = typeToggle(type).getItem(key).exp;
+    if(!typeToggle(type).getItem(key)) return '';
+    let obj = {};
+    let transVal = typeToggle(type).getItem(key);
+    //对象、数组反解析回去
+    if( (transVal.includes('[') && transVal.includes(']')) || (transVal.includes('{') && transVal.includes('}')) ) {
+        obj = JSON.parse(transVal);
+    }
+    let value = obj.data || '';
+    const expDate = obj.exp || '';
     //存储字段是否设置过期时间
     if(expDate) {
         const currTime = new Date().getTime();
@@ -13,10 +20,7 @@ const getStorage = (key = '', type = 'local') => {
             return '';
         }
     }
-    //对象、数组反解析回去
-    if( (value.startsWith('[') && value.endsWith(']')) || (value.startsWith('{') && value.endsWith('}')) ) {
-        value = JSON.parse(value);
-    }
+
     return value;
 }
 
@@ -36,8 +40,8 @@ const setStorage = ( key, value , type = 'local', expire = {}) => {
     } 
     transVal = (typeof(value) === 'object') && !valIsNaN ? JSON.stringify(value) : value;
     return typeToggle(type).setItem(key, expire.exp ? 
-                {data: transVal, exp: expire.exp, time: new Date().getTime()} : 
-                {data: transVal});
+                JSON.stringify({data: transVal, exp: expire.exp, time: new Date().getTime()}) : 
+                JSON.stringify({data: transVal}));
 }
 
 export default {
