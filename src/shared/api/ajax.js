@@ -1,9 +1,10 @@
 import Qs from 'qs';
 import axios from 'axios';
 import Utils from '../utils';
+import config from './config';
 
 const responseStatus = {
-    SUCCESS: '100',
+    SUCCESS: '200',
     NET_ERR: '101',	// 网络连接异常，请稍候再试
     BIZ_ERR: '103', // 业务请求异常
     NO_AUTH: '104',
@@ -22,14 +23,14 @@ export default function Ajax({
 	mode = '',
 	params = {},
 	from = '',
-	headers = { 'Content-Type': 'application/json;charset=UTF-8' },
+	headers = {},
   delayTime = 5000,
   netErrToast = true,//默认全局统一配置提示(网关异常)
   bizErrToast = true,//默认全局统一配置提示(业务异常)
 }) {
   return new Promise( (resolve, reject) => {
     const instance = axios.create({
-      baseURL: process.env.BASE_API,
+      baseURL: config[process.env.NODE_ENV].BASE_URL,
       timeout: delayTime,
       headers: Object.assign(
         {
@@ -37,13 +38,13 @@ export default function Ajax({
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         headers),
-        transformRequest: [function (data) {
-          let ret = ''
-          for (let it in data) {
-            ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
-          }
-          return ret
-        }]
+      transformRequest: [function (data) {
+        let ret = ''
+        for (let it in data) {
+          ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+        }
+        return ret
+      }]
     })
 
     // 请求拦截
@@ -59,8 +60,8 @@ export default function Ajax({
     instance({url, method, data})
       .then( (response) => {
         const res = response.data;
-        if(status.SUCCESS != res.errorCode) {
-          switch (res.errorCode) {
+        if(status.SUCCESS != res.statusCode) {
+          switch (res.statusCode) {
             case status.NET_ERR:
               if(netErrToast) {
 
@@ -95,16 +96,16 @@ const commonBizHeader = () => {
     params['token'] = "3dwo0onUUsPKVJcP8tk"
     params['os'] = window.navigator.appCodeName
   
-    if(Utils.getItem('userToken')) {
-      params['token'] = Utils.getItem('userToken')
+    if(Utils.getStorage('userToken')) {
+      params['token'] = Utils.getStorage('userToken')
     }
   
     params['app'] = 'kind'
   
-    let UUID = Utils.getItem('pkey')
+    let UUID = Utils.getStorage('pkey')
     if (!UUID) {
       UUID = getUUID()
-      Utils.setItem('pkey', UUID)
+      Utils.setStorage('pkey', UUID)
     }
     return encodeURIComponent(JSON.stringify(params))
 }

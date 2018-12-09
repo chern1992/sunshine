@@ -3,13 +3,14 @@ import {NForm, NButton, NIcon, NInput, NCheckbox, NRow, NCol} from 'shared/base/
 import ReactDOM from 'react-dom';
 import './index.less';
 import {callLoginByUserAndName} from 'services/login_api';
+import Utils from 'shared/utils';
 const NFormItem = NForm.NFormItem;
 
 class Login extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            userName: '',
+            username: '',
             password: '',
             passwordStatus: false,
             loginInputStatus: 'normal'//greeting,blindfold
@@ -21,16 +22,18 @@ class Login extends Component{
     }
 
     loginInfoSubmit = async(values) => {//确定提交登录信息
-        console.log(values)
         let res = await callLoginByUserAndName(values);
-        console.log(res);
+        if(res.data && res.data.accessToken) {
+            //token存储
+            Utils.setStorage('userToken', res.data.accessToken)
+        }
     }
 
     //更改输入框状态
     changeFormType = (e) => {
         let loginInputStatus = null;
         switch (e.target.id){
-            case 'userName':
+            case 'username':
                 loginInputStatus = 'greeting';
                 break;
             case 'password':
@@ -67,7 +70,7 @@ class Login extends Component{
                     <h2 className="auth-login-title">登录</h2>
                     <NForm onSubmit={this.handleSubmit} className="login-form">
                         <NFormItem>
-                            {getFieldDecorator('userName', {
+                            {getFieldDecorator('username', {
                                 rules: [{ required: true, message: '请输入用户名！' }],
                             })(
                                 <NInput 
@@ -105,7 +108,7 @@ class Login extends Component{
                             </NRow>
                             
                             
-                            <NButton block type="primary" htmlType="submit" className="login-form-button">
+                            <NButton type="primary" htmlType="submit" className="login-form-button">
                                 登陆
                             </NButton>
                            

@@ -1,10 +1,11 @@
-import {ajax} from './index';
+import Ajax from 'shared/api/ajax';
 const callLoginByUserAndName = (model = {}) => {
-    return ajax({
-        url: '/login',
+    return Ajax({
+        url: '/auth/login',
         method: 'post',
         data: {
-            ...model
+            username: model.username,
+            password: model.password
         }
     })
 }
