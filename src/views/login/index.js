@@ -22,11 +22,13 @@ class Login extends Component{
     }
 
     loginInfoSubmit = async(values) => {//确定提交登录信息
+        const {history} = this.props;
         let res = await callLoginByUserAndName(values);
         if(res.data && res.data.accessToken) {
             //token存储
             Utils.setStorage('userToken', res.data.accessToken)
         }
+        history.push('/');
     }
 
     //更改输入框状态
