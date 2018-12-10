@@ -6,6 +6,11 @@ const loginTypes = {
     REMOVE_LOGIN: 'REMOVE_LOGIN'
 }
 
+const layoutTypes = {
+    UPDATE_MODULE: 'UPDATE_MODULE'
+}
+
 export {
-    loginTypes
+    loginTypes,
+    layoutTypes
 };

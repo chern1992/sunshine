@@ -23,3 +23,5 @@ export { default as NAutoComplete } from './NAutoComplete';
 export { default as NCascader } from './NCascader';
 export { default as NTree } from './NTree';
 export { default as NModal } from './NModal';
+export { default as NLayout } from './NLayout';
+export { default as NMenu } from './NMenu';

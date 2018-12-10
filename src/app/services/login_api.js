@@ -10,6 +10,14 @@ const callLoginByUserAndName = (model = {}) => {
     })
 }
 
+const callLogout = () => {
+    return Ajax({
+        url: '/auth/logout',
+        method: 'post',
+        data: {}
+    })
+}
+
 export{
     callLoginByUserAndName
 }

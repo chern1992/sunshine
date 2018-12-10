@@ -14,3 +14,4 @@ export default class NMenu extends Component {
 }
 NMenu.NSubMenu = Menu.SubMenu;
 NMenu.NMenuItemGroup = Menu.MenuItemGroup;
+NMenu.NItem = Menu.Item;
