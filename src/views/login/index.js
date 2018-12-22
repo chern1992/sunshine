@@ -128,4 +128,3 @@ class Login extends Component{
 const LoginForm = NForm.create()(Login);
 export default LoginForm;
 
-
