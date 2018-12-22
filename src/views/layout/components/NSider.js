@@ -1,7 +1,6 @@
 import React from 'react';
 import { NLayout } from 'shared/base';
 import SiderMenu from './SiderMenu';
-import '@/style/menu.less';
 import logo from '@/logo.svg';
 
 const { NSider } = NLayout;

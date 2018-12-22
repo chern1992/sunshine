@@ -18,8 +18,26 @@ const callLogout = () => {
     })
 }
 
+const getUserInfo = () => {
+    return Ajax({
+      url: '/user/info',
+      method: 'get',
+      data: {}
+    })
+}
+
+const getAccessMemu = () => {
+    return Ajax({
+      url: '/menu/getaccessmenu',
+      method: 'get'
+    })
+  }
+
 export{
-    callLoginByUserAndName
+    callLoginByUserAndName,
+    callLogout,
+    getUserInfo,
+    getAccessMemu
 }
 
 
